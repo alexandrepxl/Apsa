@@ -1,0 +1,16 @@
+<ion-modal-view class="modal-backdrop active" id="saveSearchModal">
+    <ion-header-bar class="bar bar-header bar-calm" align-title="left">
+        <h1 class="title">Salvar busca</h1>
+        <button class="button button-clear button-primary button-icon ion-android-close" ng-click="saveSearchModal.hide()"></button>
+    </ion-header-bar>
+    <ion-content class="padding">
+        <div class="sendEmail">
+            <p class="txtDefault">Ao salvar uma busca voc&ecirc; gravar&aacute; a localiza&ccedil;&atilde;o e os filtros atuais para que possam ser acessados posteriormente.</p>
+            <h2>DIGITE UM NOME PARA SUA BUSCA:</h2>
+            <label class="inputsGrey">
+                <input type="text" placeholder="Ex: Busca imóveis Barra da Tijuca"/>
+            </label>
+            <button class="button button-block button-energized" ng-click="saveSearchName()">Salvar Busca</button>
+        </div>
+    </ion-content>
+</ion-modal-view>

@@ -1,0 +1,61 @@
+<ion-view ng-controller="SearchResultsCtrl">
+    <ion-nav-title class="title title-center">
+        <div id="logoHeader">
+            <img src='img/apsa.png' alt=''/>
+        </div>
+    </ion-nav-title>
+    <div class="bar bar-subheader bar-stable resultsSubheader padding">
+        <div class="left">
+            <h1>{{ searchResult }} resultados para {{ active }}</h1>
+            <h2>
+                {{ filter.selectedRealtyType.Descricao }}, 
+                 R${{ filter.selectedMaxRealtyPrice.ValorInicial }}, 
+                {{ filter.selectedRoom.name }}qt., 
+                {{ filter.selectedSpot.name }} vagas, 
+                {{ filter.selectedRealtyMaxArea.name}} m&sup2;
+            </h2>
+        </div>
+        <button class="button button-icon right button-clear ion-ios-film-outline button-positive" ng-click="saveSearch()"></button>
+    </div>
+    
+    <ion-content>
+        <div id="searchResult" class="list has-header">
+            <div id="listResult" class="item item-krow item-row" ng-class="{'item-box': activeButton === 'b', 'item-row': activeButton ==='a'}" ng-repeat="realty in results">
+
+                <div class="property-image" style="background-image:url('{{realty.photos[0].URLArquivo}}');">
+
+                    <label class="checkbox checkbox-star" ng-click="favoriteRealtyID(isFavorited[$index],{{realty.code}},$index)">
+                        <input type="checkbox" ng-model="isFavorited[$index]" />
+                    </label>
+
+                </div>
+                <div class="property-summary">
+                    <div>
+                        <div>
+                          <h3>{{ realty.title }}</h3>
+                        </div>
+                    </div>
+                    <p class="specs">{{ realty.dorms}} qt, {{ realty.spots }} vg, {{ realty.area }}m&sup2;</p>
+                    <button class="button button-energized" ng-click="goDetails({{realty.code}})">Valor: R$ {{ realty.price }}</button>
+                    <p class="distance">Distancia {{ distance[$index] }}</p>
+                </div>
+            </div>
+        </div>
+
+        <ion-infinite-scroll
+            ng-if="canWeLoadMoreContent()"
+            on-infinite="populateList()" 
+            distance="5%">
+        </ion-infinite-scroll>
+
+    </ion-content>
+
+
+    <ion-footer-bar class="bar-positive">
+        <div class="buttons">
+            <button id="listView" ng-click="activeButton = 'a'" ng-class="{'button-energized': activeButton === 'a'}" class="button button-icon button-clear ion-ios-list-outline button-energized"></button>
+            <button id="gridView" ng-click="activeButton = 'b'" ng-class="{'button-energized': activeButton === 'b'}" class="button button-icon button-clear ion-ios-grid-view-outline"></button>
+        </div>
+        <button class="button button-icon ion-map pull-right" ng-click="goMaps()"></button>
+    </ion-footer-bar>
+</ion-view>

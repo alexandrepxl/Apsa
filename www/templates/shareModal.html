@@ -1,0 +1,19 @@
+<ion-modal-view class="modal-backdrop active" id="shareModal">
+    <ion-header-bar class="bar bar-header bar-calm" align-title="left">
+        <h1 class="title">Compartilhar</h1>
+        <button class="button button-clear button-primary button-icon ion-android-close" ng-click="shareModal.hide()"></button>
+    </ion-header-bar>
+    <ion-content class="padding txtCenter">
+        <div class="shareIconsWrapper">
+            <a href="" class="shareIcons" ng-click="shareAnywhere()">
+                <img src="img/whatsapp.png" alt=""/>Whatsapp
+            </a>
+            <a href="" class="shareIcons" ng-click="shareAnywhere()">
+                <img src="img/facebook.png" alt=""/>Facebook
+            </a>
+            <a href="" class="shareIcons" ng-click="shareAnywhere()">
+                <img src="img/inbox.png" alt=""/>Inbox
+            </a>
+        </div>
+    </ion-content>
+</ion-modal-view>

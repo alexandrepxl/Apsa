@@ -1,0 +1,116 @@
+<ion-view ng-controller="SearchIndexCtrl">
+<ion-nav-bar class="bar-positive" align-title="center">
+<ion-nav-back-button class="button-clear">
+<i class="button button-icon icon ion-android-arrow-back"></i>
+</ion-nav-back-button>
+<ion-nav-title class="title-center">
+<h1 class="title" id="smallTitle">{{ title_bairro }} - {{ title_tipo }}</h1>
+</ion-nav-title>
+</ion-nav-bar>
+<ion-content>
+<div class="padding" id="advSearch">
+    <div id="whiteCover" ng-click="cancelCodeSearch()"></div>
+    <div id='searchHintBox' ng-show="hintBox">Use esta op&ccedil;&atilde;o se voc&ecirc; deseja procurar o im&oacute;vel por c&oacute;digo. Aperte fora da caixa para cancelar e procurar por atributos.</div>
+    <div id="popupFocus">
+
+        <h2>PROCURAR POR C&Oacute;DIGO</h2>
+
+        <input type="search" class="searchBox inputsGrey" id="searchCode" placeholder="Ex.: 1203976" ng-model="filter.realtyCode" ng-focus="focusHere()" ng-blur="blurHere()">
+
+        <i id="searchHint" class="button button-icon icon ion-help-circled energized" ng-click="toggle = !toggle"></i>
+
+        <div class="box-help" ng-hide="toggle">
+            <span></span>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+
+    </div>
+    <h2>TIPO DO IM&Oacute;VEL</h2>
+    
+    <label class="item item-select selectList">
+    
+    <select name="tipoImovel" id="{{realtyType.Codigo}}" 
+        ng-model="filter.selectedRealtyType" 
+        ng-change="updateFilter('tipoImovel')" 
+        
+        ng-options="realtyType.Descricao for realtyType in filter.realtyTypes">
+       
+    </select>
+</label>
+
+<h2>VER RESULTADOS ORDENADOS POR</h2>
+<label class="item item-select selectList">
+    <select name="ordemResultado"
+    id="ordemResultado"
+    ng-model="filter.selectedOrderBy"
+    ng-options="orderBy.name for orderBy in filter.orderByOptions"></select>
+</label>
+<div class="left half">
+    <h2>VALOR M&Iacute;NIMO</h2>
+    <label class="item item-select selectList">
+        <select name="minimoValor"
+        id="minimoValor"
+        ng-model="filter.selectedMinRealtyPrice"
+        ng-options="price.Descricao for price in filter.realtyPrices track by price.Codigo"></select>
+    </label>
+</div>
+<div class="right half">
+    <h2>VALOR M&Aacute;XIMO</h2>
+    <label class="item item-select selectList">
+        <select name="maximoValor"
+        id="maximoValor"
+        ng-model="filter.selectedMaxRealtyPrice"
+        ng-options="price.Descricao for price in filter.realtyPrices track by price.Codigo"></select>
+    </label>
+</div>
+<div class="left half">
+    <h2>&Aacute;REA M&Iacute;NIMA</h2>
+    <label class="item item-select selectList">
+        <select name="minimaArea"
+        id="minimaArea"
+        ng-model="filter.selectedRealtyMinArea"
+        ng-options="area.name for area in filter.areaSizes"></select>
+    </label>
+</div>
+<div class="right half">
+    <h2>&Aacute;REA M&Aacute;XIMA</h2>
+    <label class="item item-select selectList">
+        <select name="maximaArea"
+            id="maximaArea"
+            ng-model="filter.selectedRealtyMaxArea"
+            ng-options="area.name for area in filter.areaSizes">
+        </select>
+    </label>
+</div>
+<div class="clear"></div>
+<h2>N&Uacute;MERO DE QUARTOS</h2>
+
+<div id="roomNmb" class="button-bar bar-light center">
+    <ion-radio ng-repeat="room in filter.rooms"
+    ng-value="room.value"
+    ng-model="filter.selectedRoom"
+    class="button button-energized button-outline buttonBorderOrange"
+    name="RoomQnty">
+    {{ room.name }}
+</ion-radio>
+</div>
+
+<h2>N&Uacute;MERO DE VAGAS</h2>
+<div id="vagasNmb" class="button-bar bar-light center">
+    <ion-radio ng-repeat="spot in filter.spots"
+    ng-value="spot.value"
+    ng-model="filter.selectedSpot"
+    class="button button-energized button-outline buttonBorderOrange"
+    name="SpotQnty">
+    {{ spot.name }}
+</ion-radio>
+</div>
+</div>
+<div id="advSearchButton">
+    <button id="searchButton" class="button button-large button-energized button-center" 
+    ng-click="doRealtySearch()">BUSCAR</button>
+</div>
+
+</ion-content>
+</ion-view>

@@ -1,0 +1,27 @@
+
+
+<h3 class="energized title-small" ng-if="resultUser.id == 5">Selecione um dos condom&iacute;nios abaixo:</h3>
+
+
+<ion-item class="item-box-round condos" ng-repeat="condominium in condominios" ng-click="openCondominio()">
+
+    <div class="minH padding box-grey">
+        <h2>Condom&iacute;nio</h2>
+        <p>{{condominium.condominio}}</p>
+    </div>
+    <div class="minH padding">
+        <div class="left w60">
+            <h2>Gerente</h2>
+            <p>{{condominium.gerente}}</p>
+        </div>
+        <div class="left">
+            <h2>Agencia</h2>
+            <p>{{condominium.agecia}}</p>
+        </div>
+        <div class="right">
+            <h2>Conta</h2>
+            <p>{{condominium.cota}}</p>
+        </div>
+    </div>
+
+</ion-item>

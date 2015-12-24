@@ -1,0 +1,40 @@
+<ion-view>
+<ion-nav-title class="title title-center">
+<div id="logoHeader">
+    <img src='img/apsa.png' alt=''/>
+</div>
+</ion-nav-title>
+<ion-content id="imgBg">
+<h1 id="mainTitle">PROCURE O<br/>SEU IM&Oacute;VEL</h1>
+<div id="firstSearch" class="center">
+    <label class="item-input searchBox left">
+        <i class="icon ion-ios-search-strong button button-icon"></i>
+        <input type="search" placeholder="Digite aqui seu endereço" ng-model="address.full">
+        <button type="button" class="icon ion-android-locate button button-icon" on-tap="requestLatLong();"></button>
+    </label>
+    <button class="button button-medium button-light icon ion-ios-compose-outline right" ng-click="goMapCreate()"></button>
+</div>
+<h2 id="secondTitle" class="clear">O QUE VOC&Ecirc; PROCURA?</h2>
+<div id="rentBuy" class="button-bar bar-light center">
+    <ion-radio ng-repeat="searchType in searchTypes"
+    ng-value="searchType"
+    ng-model="filter.selectedType"
+    class="button button-positive button-outline"
+    name="SearchType">
+    {{ searchType.name }}
+</ion-radio>
+</div>
+
+<button id="searchButton" class="button button-large button-energized button-center" 
+ng-click="checkAddress();goAdvancedSearch()">BUSCAR</button>
+
+<div id="loginFront">
+    <h3>&Aacute;REA EXCLUSIVA APSA</h3>
+    <p>&Eacute; um canal de acesso a todas as<br>informa&ccedil;&otilde;es do seu condom&iacute;nio ou im&oacute;vel.</p>
+    <div id="loginFrontBtns" class="button-bar">
+        <button class="button button-positive" ui-sref="app.login" ng-click="closeDrawer()">Entrar</button>
+        <button class="button button-positive" ng-click="goRegister();closeDrawer()">Cadastrar</button>
+    </div>
+</div>
+</ion-content>
+</ion-view>

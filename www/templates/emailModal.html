@@ -1,0 +1,30 @@
+<ion-modal-view class="modal-backdrop active" id="emailModal">
+    <ion-header-bar class="bar bar-header bar-calm" align-title="left">
+        <h1 class="title">Enviar mensagem</h1>
+        <button class="button button-clear button-primary button-icon ion-android-close" ng-click="sendMailModal.hide()"></button>
+    </ion-header-bar>
+    <ion-content class="padding">
+        <div class="sendEmail">
+            <h2 class="">NOME</h2>
+            <label class="inputsGrey">
+                <input class="" type="text" placeholder="Digite seu nome"/>
+            </label>
+            <h2>TELEFONE</h2>
+            <label class="inputsGrey left phoneDDD">
+                <input type="text" placeholder="DDD"/>
+            </label>
+            <label class="inputsGrey right phoneNumber">
+                <input type="text" placeholder="Digite seu telefone"/>
+            </label>
+            <h2>E-MAIL</h2>
+            <label class="inputsGrey">
+                <input type="text" placeholder="Digite seu e-mail"/>
+            </label>
+            <h2>MENSAGEM</h2>
+            <label class="inputsGrey messageBox">
+                <textarea rows="7" placeholder="Digite sua mensagem"></textarea>
+            </label>
+            <button class="button button-block button-energized" ng-click="sendMail()">Enviar Mensagem</button>
+        </div>
+    </ion-content>
+</ion-modal-view>

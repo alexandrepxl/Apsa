@@ -1,0 +1,42 @@
+<ion-item class="no-padding item-box-round" ng-repeat="realty in realties">
+    <div class="header">
+        <div class="left padding">
+            <h2>Im&oacute;vel</h2>
+            <p>{{realty.address}}</p>
+        </div>
+        <button ng-click="data.tall=!data.tall" class="positionRight button button-icon button-balanced padding realtyBtnDet"><i class="icon" ng-class="data.tall?'ion-chevron-up':'ion-chevron-down'"></i></button>
+    </div>
+    <div class="padding realtyDetails" ng-class="{tenant: 'tenant', owner: 'owner'}[profile.name]; {{checkHowMany}}">
+        <div class="left realtyData">
+            <h3>N&uacute;mero do contrato</h3>
+            <p>{{realty.contract}}</p>
+        </div>
+        <div class="right realtyData">
+            <h3>Situa&ccedil;&atilde;o</h3>
+            <p>{{realty.situation}}</p>
+        </div>
+        <div class="left realtyData" ng-if="checkProfile('owner')">
+            <h3>Locat&aacute;rio</h3>
+            <p>{{realty.tenant}}</p>
+        </div>
+        <div class="left realtyData" ng-if="checkProfile('tenant')">
+            <h3>Vencimento do Boleto</h3>
+            <p>{{realty.expiryDate}}</p>
+        </div>
+        <div class="right realtyData">
+            <h3>Valor(R$)</h3>
+            <p>{{realty.value}}</p>
+        </div>
+        <div class="left realtyData" ng-if="checkProfile('owner')">
+            <h3>Vig&ecirc;ncia</h3>
+            <p>{{realty.validity}}</p>
+        </div>
+        <div class="right realtyData" ng-if="checkProfile('owner')">
+            <h3>Pr&oacute;ximo Reajuste</h3>
+            <p>{{realty.nextAdjustment}}</p>
+        </div>
+        <div class="clear"></div>
+        <button class="button button-wide-center button-energized clear" ng-if="checkProfile('owner')">Ver extrato</button>
+        <button class="button button-wide-center button-energized" ng-if="checkProfile('tenant')">2&ordf; via do boleto</button>
+    </div>
+</ion-item>

@@ -1,0 +1,98 @@
+<ion-view ng-controller="ProfileCtrl" class="restricted">
+
+    <ion-nav-title class="title title-center">
+        <div id="logoHeader">
+            <img src='img/apsa.png' alt=''/>
+        </div>
+    </ion-nav-title>
+
+    <ion-content class="has-header profile">
+        <div class="header">
+            <h1>Minha Página</h1>
+            <p class="">Veja seus dados de cadastro de acordo com o perfil <br />
+            de relacionamento que possui com a APSA.</p>
+        </div>
+
+        <div class="group padding margin-horizontal">
+            <div class="row padding">
+                <div class="col">Nome</div>
+            </div>
+
+            <div class="row padding">
+                <div class="col">Marcio Martins</div>
+                <div class="col text-right">
+                    <a class="button">Editar</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="group padding">
+            <div class="row padding">
+                <div class="col">Usuário</div>
+            </div>
+
+            <div class="row padding">
+                <div class="col">marciomartins</div>
+                <div class="col text-right">
+                    <a class="button">Editar</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="group padding">
+            <div class="row padding">
+                <div class="col">Senha</div>
+            </div>
+
+            <div class="row padding">
+                <div class="col">*******</div>
+                <div class="col text-right">
+                    <a class="button">Editar</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="group padding">
+            <div class="row padding">
+                <div class="col">Email</div>
+            </div>
+
+            <div class="row padding">
+                <div class="col">ticonet@gmail.com</div>
+                <div class="col text-right">
+                    <a class="button">Editar</a>
+                </div>
+            </div>
+        </div>
+
+    </ion-content>
+
+    <div class="menu-footer" ng-class="{'show' : show , 'hide' : !show}">
+
+        <div class="row">
+            <p class="text-center" ui-sref="app.homepage">Página Inicial</p>
+        </div>
+
+        <div class="row">
+            <p class="text-center">Cota</p>
+        </div>
+
+        <div class="row">
+            <p class="text-center" ui-sref="app.profile">Minha página</p>
+        </div>
+
+        <div class="row">
+            <p class="text-center">Sair</p>
+        </div>
+
+    </div>
+
+    <ion-footer-bar class="bar-positive">
+        <div class="icon ion-android-person"></div>
+        <div class="icon ion-email"></div>
+        <div class="icon ion-ios-telephone-outline"></div>
+
+        <div class="icon ion-navicon" ng-click="show=!show"></div>
+    </ion-footer-bar>
+
+</ion-view>

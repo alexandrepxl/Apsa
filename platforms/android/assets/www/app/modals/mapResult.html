@@ -1,0 +1,83 @@
+<ion-view>
+    <ion-nav-title class="title title-center">
+        <div id="logoHeader">
+            <img src='img/apsa.png' alt=''/>
+        </div>
+    </ion-nav-title>
+    <div class="bar bar-subheader bar-stable resultsSubheader padding">
+        <div class="left">
+            <h1>{{ searchResult.number }} im&oacute;veis para {{ active }}</h1>
+            <h2>{{ imovel.tipo }}, {{ maximo.valor }}, {{ activeRoom }}, {{ activeVaga }}, {{ maxima.area }}</h2>
+        </div>
+        <button class="button button-icon right button-clear ion-ios-film-outline button-positive" ng-click="resultMapModal.hide()"></button>
+    </div>
+    <ion-content class="has-header has-footer" ng-controller="searchResultsCtrl">
+
+        <div class="map-markers">
+
+
+        </div>
+        
+        <div class="map-property-selected" ng-hide="propertySelected">
+            <div id="mapResultItem" class="bar bar-header bar-calm has-header">
+                <h2 class="title title-left">Apartamento Padr&atilde;o</h2>
+                <button class="button button-icon button-clear iconv ion-android-close" ng-click="closeProperty()"></button>
+            </div>
+            <div class="property-image" style="background-image: url({{ mapProperty.image }});"></div>
+            <div class="property-summary">
+                <h3>{{ mapProperty.title }}</h3>
+                <p class="specs">{{ mapProperty.specs.rooms}}, {{ mapProperty.specs.spots }}, {{ mapProperty.specs.area }}&sup2;</p>
+                <button class="button button-energized">Aluguel: R${{ mapProperty.price }}</button>
+            </div>
+        </div>
+
+    </ion-content>
+
+
+    <ion-footer-bar class="bar-positive">
+        <div class="buttons">
+            <button id="listView" class="button button-icon button-clear ion-ios-list-outline"></button>
+            <button id="gridView" class="button button-icon button-clear ion-ios-grid-view-outline"></button>
+        </div>
+        <button class="button button-icon button-clear ion-map pull-right button-energized"></button>
+    </ion-footer-bar>
+</ion-view>
+
+
+
+
+
+
+
+
+
+<!-- <ion-modal-view class="modal-backdrop active" id="emailModal">
+    <ion-header-bar class="bar bar-header bar-calm" align-title="left">
+        <h1 class="title">Enviar mensagem</h1>
+        <button class="button button-clear button-primary button-icon ion-android-close" ng-click="sendMailModal.hide()"></button>
+    </ion-header-bar>
+    <ion-content class="padding">
+        <div class="sendEmail">
+            <h2 class="">NOME</h2>
+            <label class="inputsGrey">
+                <input class="" type="text" placeholder="Digite seu nome"/>
+            </label>
+            <h2>TELEFONE</h2>
+            <label class="inputsGrey left phoneDDD">
+                <input type="text" placeholder="DDD"/>
+            </label>
+            <label class="inputsGrey right phoneNumber">
+                <input type="text" placeholder="Digite seu telefone"/>
+            </label>
+            <h2>E-MAIL</h2>
+            <label class="inputsGrey">
+                <input type="text" placeholder="Digite seu e-mail"/>
+            </label>
+            <h2>MENSAGEM</h2>
+            <label class="inputsGrey messageBox">
+                <textarea rows="7" placeholder="Digite sua mensagem"></textarea>
+            </label>
+            <button class="button button-block button-energized" ng-click="sendMail()">Enviar Mensagem</button>
+        </div>
+    </ion-content>
+</ion-modal-view> -->

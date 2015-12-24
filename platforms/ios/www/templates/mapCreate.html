@@ -1,0 +1,24 @@
+<ion-view ng-controller="MapController">
+    <ion-nav-title class="title title-center">
+        <div id="logoHeader">
+            <img src='img/apsa.png' alt=''/>
+        </div>
+    </ion-nav-title>
+    <ion-content>
+        <div id="map" style="width: 100%;height: 600px;"></div>
+    </ion-content>
+    <ion-footer-bar class="bar-positive">
+        <button class="button button-icon button-clear txtSmall" ng-click="toggle = !toggle; toggleMap(toggle)" ng-class="toggle ? 'button-energized' : ''">
+            <span class="txtSmall">
+            <span ng-hide="toggle">
+                <i class="button button-clear button-icon ion-ios-compose-outline"></i>Iniciar
+            </span>
+            <span ng-show="toggle">
+                <i class="button button-clear button-icon button-energized ion-ios-compose-outline"></i>Concluir
+            </span>
+            marca&ccedil;&atilde;o
+            </span>
+        </button>
+        <button class="button button-clear bottom-link-right"><span class="txtSmall">Limpar marca&ccedil;&atilde;o</span></button>
+    </ion-footer-bar>
+</ion-view>

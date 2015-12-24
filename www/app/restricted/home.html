@@ -1,0 +1,48 @@
+<ion-view ng-controller="RestrictedHomeCtrl">
+    <ion-nav-title class="title title-center">
+        <div id="logoHeader">
+            <img src='img/apsa.png' alt=''/>
+        </div>
+    </ion-nav-title>
+    <div class="bar bar-subheader bar-stable resultsSubheader padding">
+        <div class="left">
+            <h1>{{ title() }}</h1>
+            <h2 ng-if="resultUser.id == 1">Sou proprietário.</h2>
+            <h2 ng-if="resultUser.id == 2">Sou inquilino.</h2>
+             <h2 ng-if="resultUser.id == 5">Sou síndico,condômino, funcionário ou procurador.</h2>
+        </div>
+    </div>
+    <ion-content class="has-subheader padding">
+        <div>
+
+            <!--===================================
+            Directive for owner and tenant profiles
+            ====================================-->
+
+            <realties ng-if="resultUser.id == 2"></realties>
+            <!-- <realties ng-if="resultUser.id == 2"></realties> -->
+
+
+            <div class="resultsSubheader padding"  ng-if="checkOwnerProfile">
+                <h1>{{ loggedHeader.secondTitle }}</h1>
+                <h2>{{ loggedHeader.secondSubtitle }}</h2>
+            </div>
+
+            <!--=====================================
+            Directive for syndic and dweller profiles
+            ======================================-->
+
+            <condos ng-if="resultUser.id == 5"></condos>
+            <!-- <condos ng-if="checkProfile('syndic') || checkOwnerProfile"></condos> -->
+
+        </div>
+    </ion-content>
+    <ion-footer-bar class="bar-positive">
+        <div class="buttons">
+            <button ng-click="activeButton = 'a'" ng-class="{'button-energized': activeButton === 'a'}" class="button button-icon button-clear ion-ios-person-outline"></button>
+            <!--<button ng-click="activeButton = 'b'" ng-class="{'button-energized': activeButton === 'b'}" class="button button-icon button-clear ion-ios-email-outline"></button>
+            <button ng-click="activeButton = 'c'" ng-class="{'button-energized': activeButton === 'c'}" class="button button-icon button-clear ion-ios-telephone-outline"></button>-->
+        </div>
+        <button class="button button-icon ion-android-menu pull-right" ng-click=""></button>
+    </ion-footer-bar>
+</ion-view>

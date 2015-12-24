@@ -1,0 +1,68 @@
+{
+  "ExtratoProprietario": {
+    "LancamentosContratoImovel": {
+      "Titulo": "Lançamentos Contrato Imóvel",
+      "Lancamentos": null
+    },
+    "LancamentosGerais": {
+      "Titulo": "Lançamentos Gerais",
+      "Lancamentos": null,
+      "SubTotal": "0"
+    },
+    "LancamentosGeraisFuturos": {
+      "Titulo": "Lançamentos Futuros",
+      "Lancamentos": null,
+      "SubTotal": "0"
+    },
+    "LancamentosRemessa": {
+      "Titulo": "Emissão de remessa",
+      "Lancamentos": [
+        {
+          "Data": "2015-08-04T00:00:00",
+          "Descricao": "DESPESA BANCÁRIA",
+          "Valor": "-7.50",
+          "CodigoImovel": "0",
+          "CodigoContrato": "0"
+        },
+        {
+          "Data": "2015-08-04T00:00:00",
+          "Descricao": "REMESSA ELETRÔNICA - RP    1714447 -  1 / 1",
+          "Valor": "-1287.41",
+          "CodigoImovel": "0",
+          "CodigoContrato": "0"
+        },
+        {
+          "Data": "2015-08-07T00:00:00",
+          "Descricao": "DESPESA BANCÁRIA",
+          "Valor": "-7.50",
+          "CodigoImovel": "0",
+          "CodigoContrato": "0"
+        },
+        {
+          "Data": "2015-08-07T00:00:00",
+          "Descricao": "REMESSA ELETRÔNICA - RP    1716391 -  1 / 1",
+          "Valor": "-1792.22",
+          "CodigoImovel": "0",
+          "CodigoContrato": "0"
+        }
+      ],
+      "SubTotal": "-3094.63"
+    },
+    "LancamentosRemessaFuturos": {
+      "Titulo": "Emissão de remessa - Lançamentos Futuros",
+      "Lancamentos": null,
+      "SubTotal": "0"
+    },
+    "Resumo": {
+      "SaldoInicial": "0",
+      "TotalReceitaRealizado": "0",
+      "TotalDespesaRealizado": "3094.63",
+      "TotalReceitaFutura": "0",
+      "TotalDespesaFutura": "0",
+      "SaldoPeriodo": "0",
+      "ReceitaFutura": "0",
+      "DespesaFutura": "0",
+      "SaldoFinal": "0"
+    }
+  }
+}

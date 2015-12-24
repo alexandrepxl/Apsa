@@ -1,0 +1,40 @@
+<ion-modal-view class="modal-backdrop active result-map" style="height: 40%;">
+	 <ion-header-bar class="bar bar-header bar-calm" align-title="left">
+        <h1 class="title">{{tipodeimovel}}</h1>
+        <button class="button button-clear button-primary button-icon ion-android-close" ng-click="resultModal.hide()"></button>
+    </ion-header-bar>
+    <ion-content class="">
+
+
+		  <div id="searchResult" class="list has-header">
+            <div id="listResult" class="item item-krow item-row" ng-class="{'item-box': activeButton === 'b', 'item-row': activeButton ==='a'}">
+
+                <div class="property-image" style="background-image:url('{{imagemimovel}}');">
+
+                    <label class="checkbox checkbox-star" ng-click="">
+
+                        <input type="checkbox" ng-model="realty.isFavorited" />
+
+                    </label>
+
+                </div>
+
+                <div class="property-summary">
+                    <div>
+                        <div>
+                          <h3>{{ endereco }}</h3>
+                        </div>
+                    </div>
+
+                    <p class="specs">{{ qntquartos }} quartos, {{ qntvagas }} vagas, {{ areautil }}m&sup2;</p>
+
+                    <button class="button button-energized" id="code-imovel" data-code="{{codeimovel}}" ng-click="goDetail(); resultModal.hide()">Valor: R$ {{ precolocacao }}</button>
+
+                </div>
+
+            </div>
+        </div>
+
+
+	</ion-content>
+</ion-modal-view>

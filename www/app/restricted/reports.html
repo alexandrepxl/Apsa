@@ -1,0 +1,101 @@
+<ion-view ng-controller="RestrictedReportsCtrl" class="restricted">
+
+    <ion-nav-title class="title title-center">
+        <div id="logoHeader">
+            <img src='img/apsa.png' alt=''/>
+        </div>
+    </ion-nav-title>
+
+    <ion-content class="has-header reports">
+        <div class="header">
+            <h1>Extrato</h1>
+            <p class="">Selecione os filtros para realizar a consulta ao extrato</p>
+        </div>
+
+        <div ng-repeat="item in data"
+             ng-switch="item.Lancamentos || null">
+
+
+            <h1>{{item.Titulo}}</h1>
+
+            <div ng-switch-default>
+
+                <div class="row row-header padding-horizontal">
+                    <div class="col">Datas</div>
+                    <div class="col col-50 text-left">Lançamento</div>
+                    <div class="col text-right">Valor (R$)</div>
+                </div>
+
+                <div class="entry-data padding-horizontal"
+                     ng-repeat="item in item.Lancamentos"
+                     ng-switch="$even"
+                     ng-class-even="'even'"
+                     ng-class-odd="'odd'">
+
+                    <div class="row" ng-switch-when="true">
+                        <mydate class="col">{{item.Data | date:'dd/M/yyyy'}}</mydate>
+                        <div class="col col-50">{{item.Descricao}}</div>
+                        <div class="col text-right">{{item.Valor}}</div>
+                    </div>
+
+                    <div class="row" ng-switch-default>
+                        <mydate class="col">{{item.Data | date:'dd/M/yyyy'}}</mydate>
+                        <div class="col col-50">{{item.Descricao}}</div>
+                        <div class="col text-right">{{item.Valor}}</div>
+                    </div>
+
+                </div>
+
+                <div class="row entry-subtotal padding-horizontal">
+                    <div class="col col-50">Subtotal</div>
+                    <div class="col col-50 text-right">{{item.SubTotal}}</div>
+                </div>
+
+            </div>
+
+            <div class="row" ng-switch-when="null">
+                <div class="col text-center not-found">Não existem lançamentos</div>
+            </div>
+
+
+            <div ng-if="$last">
+                <h1>Subtotal</h1>
+
+                <div class="row padding-horizontal">
+                    <div class="col col-75">Total de despesas</div>
+                    <div class="col">{{item.TotalDespesaRealizado}}</div>
+                </div>
+            </div>
+
+        </div>
+
+    </ion-content>
+
+    <div class="menu-footer" ng-class="{'show' : show , 'hide' : !show}">
+
+        <div class="row">
+            <p class="text-center" ui-sref="app.homepage">Página Inicial</p>
+        </div>
+
+        <div class="row">
+            <p class="text-center">Cota</p>
+        </div>
+
+        <div class="row">
+            <p class="text-center" ui-sref="app.profile">Minha página</p>
+        </div>
+
+        <div class="row">
+            <p class="text-center">Sair</p>
+        </div>
+
+    </div>
+
+    <ion-footer-bar class="bar-positive">
+        <div class="icon ion-android-person"></div>
+        <div class="icon ion-email"></div>
+        <div class="icon ion-ios-telephone-outline"></div>
+
+        <div class="icon ion-navicon" ng-click="show=!show"></div>
+    </ion-footer-bar>
+</ion-view>

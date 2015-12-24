@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    <!--GOOGLE FONTS LOCALLY-->
+    <link href="fontface.css" rel="stylesheet" type="text/css">
+    <!--IONIC CSS-->
+
+    <!-- compiled css output -->
+    <link href="css/ionic.app.css" rel="stylesheet">
+    <!--<link href="css/restricted.css" rel="stylesheet">-->
+
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+    <script src="lib/ionic/js/angular/angular-sanitize.min.js"></script>
+
+    <!-- IONIC ION DRAWER by BRYBOTT -->
+    <link href="lib/ionic-ion-drawer/ionic.contrib.drawer.css" rel="stylesheet">
+    <script src="lib/ionic-ion-drawer/ionic.contrib.drawer.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="lib/ng-cordova/dist/ng-cordova.js"></script>
+    <script src="cordova.js"></script>
+
+    <!-- your app's js -->
+    <script src="app/app.js"></script>
+
+    <script src="js/factories.js"></script>
+    <script src="js/controllers.js"></script>
+
+    <!-- NEW STRUCTURE -->
+    <script src="services/index.js"></script>
+    <script src="services/user.js"></script>
+    <script src="services/report.js"></script>
+    <script src="services/search.js"></script>
+    <script src="services/map.js"></script>
+    <script src="services/location.js"></script>
+    
+
+    <script src="app/home/home.js"></script>
+    <script src="app/search/search.js"></script>
+    <script src="app/realty/realty.js"></script>
+    <script src="app/register/register.js"></script>
+    <script src="app/config/config.js"></script>
+
+    <script src="app/restricted/login.js"></script>
+    <script src="app/restricted/home.js"></script>
+    <script src="app/restricted/report.js"></script>
+    <script src="app/restricted/directives.js"></script>
+
+    
+    <!-- maps js -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC_Um7H7bwlY3KWRD0us7dUEs1bvJuPLoo"></script>
+    <script src="http://google-maps-utility-library-v3.googlecode.com/svn/trunk/infobox/src/infobox.js"></script>
+
+    <script src="js/maps/controllers.js"></script>
+    
+
+    <!-- soap -->
+    <script src="app/soap/soapclient.js"></script>
+    <script src="app/soap/angular.soap.js"></script>
+    
+
+</head>
+<body ng-app="app">
+
+<ion-nav-view>
+</ion-nav-view>
+
+</body>
+</html>
